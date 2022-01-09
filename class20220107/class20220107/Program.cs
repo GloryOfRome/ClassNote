@@ -38,8 +38,36 @@ namespace class20220107
             //bool completeNmber = CompleteNmber(num);
             //Console.WriteLine(completeNmber);
 
-            CompleteNumbersInRang(1, 1000);
+            ////4--
+            //CompleteNumbersInRang(1, 1000);
+
+            //5--
+            bool b = AreFriend(220, 284);
+            Console.WriteLine(b);
         }
+        //5---the friend number
+        //x,y
+        //sum(divisors x)==y && sum(divisors y)==x,then x and y are friends
+        static bool AreFriend(int num1,int num2)
+        {
+            if (DivSum(num1) == num2 && DivSum(num2) == num1)
+                return true;
+            else
+                return false;
+        }
+
+        //写一个方法求x除数的和
+        static int DivSum(int num)
+        {
+            int divisorSum = 0;
+            for (int i = 1; i <= num / 2; i++)
+            {
+                if (num % i == 0)
+                    divisorSum += i;
+            }
+            return divisorSum;
+        }
+
         //4---write a function to print all complete number in range
         static void CompleteNumbersInRang(int start,int end)
         {
@@ -49,8 +77,6 @@ namespace class20220107
                 if(b)
                     Console.WriteLine(i);
             }
-
-
         }
 
         //3---write a funtion to see if an umber is complete

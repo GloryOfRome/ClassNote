@@ -45,8 +45,29 @@ namespace class20220107
             //bool b = AreFriend(220, 284);
             //Console.WriteLine(b);
 
-            //6--
-            PrintAllFriendsInRange(1, 10000);
+            ////6--
+            //PrintAllFriendsInRange(1, 1000);
+
+            //用Switch语句将所有method以菜单显示
+            Console.WriteLine("please enter a Number:");
+            int option = int.Parse(Console.ReadLine());
+            switch (option)
+            {
+                case 1:
+                    Console.WriteLine("you chose complete number, enter a number:");
+                    int num = int.Parse(Console.ReadLine());
+                    Console.WriteLine(CompleteNmber(num);
+                    break;
+                case 2:
+                    Console.WriteLine("you chose friends number, enter two numbers:");
+                    int n1 = int.Parse(Console.ReadLine());
+                    int n2 = int.Parse(Console.ReadLine());
+                    Console.WriteLine(AreFriend(n1,n2);
+                    break;
+                default:
+                    Console.WriteLine(  "wrong oprion...");
+                    break;
+            }
         }
 
         //6---write a function to print all friend number in range

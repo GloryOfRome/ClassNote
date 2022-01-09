@@ -24,14 +24,41 @@ namespace class20220107
             //string[] strArray = new string[] { "1", "2", "3" };
             //PrintStirngArray(strArray);
 
-            //2---
-            int[] intArray = new int[] { 2, 4, 5, 2, 8, 2 };
+            ////2---
+            //int[] intArray = new int[] { 2, 4, 5, 2, 8, 2 };
+            //Console.WriteLine("please enter a number");
+            //int num = int.Parse(Console.ReadLine());
+            //int countNumber = CountNumberInArray(intArray, num);
+            //Console.WriteLine(countNumber);
+
+            //3--
             Console.WriteLine("please enter a number");
             int num = int.Parse(Console.ReadLine());
-            int countNumber = CountNumberInArray(intArray, num);
-            Console.WriteLine(countNumber);
+
+            bool completeNmber = CompleteNmber(num);
+            Console.WriteLine(completeNmber);
         }
 
+        //3---write a funtion to see if an umber is complete
+        //the number is equal to the sum of its divisors
+        //12:1,2,3,4,6
+        //6:1,2,3
+        //28:1,2,4,7,14
+        static bool CompleteNmber(int num)
+        {
+            int divisorSum = 0;
+            for (int i = 1; i < num; i++)
+            {
+                if (num % i == 0)
+                    divisorSum += i;
+            }
+            Console.WriteLine($"the sum of its divisors is {divisorSum}");
+            if (divisorSum == num)
+                return true;
+            else
+                return false;
+
+        }
         //2---write a method to return the frequency of a number in an interger array
         //{2,4,5,2,8,2} freq(2) =3
         static int CountNumberInArray(int[] intArray,int freq)

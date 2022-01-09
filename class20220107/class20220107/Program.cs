@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace class20220107
 {
@@ -48,31 +49,55 @@ namespace class20220107
             ////6--
             //PrintAllFriendsInRange(1, 1000);
 
-            //用Switch语句将所有method以菜单显示
-            Console.WriteLine("please enter a Number:");
-            int option = int.Parse(Console.ReadLine());
-            while (option != 0)
+            ////用Switch语句将所有method以菜单显示
+            //Console.WriteLine("please enter a Number:");
+            //int option = int.Parse(Console.ReadLine());
+            //while (option != 0)
+            //{
+            //    switch (option)
+            //    {
+            //        case 1:
+            //            Console.WriteLine("you chose complete number, enter a number:");
+            //            int num = int.Parse(Console.ReadLine());
+            //            Console.WriteLine(CompleteNmber(num));
+            //            break;
+            //        case 2:
+            //            Console.WriteLine("you chose friends number, enter two numbers:");
+            //            int n1 = int.Parse(Console.ReadLine());
+            //            int n2 = int.Parse(Console.ReadLine());
+            //            Console.WriteLine(AreFriend(n1, n2));
+            //            break;
+            //        default:
+            //            Console.WriteLine("wrong oprion...");
+            //            break;
+            //    }
+            //    Console.WriteLine("if you want to stop, you can enter number 0");
+            //    option = int.Parse(Console.ReadLine());
+            //}
+            int[] intArray = new int[7] { 1, 3, 1, 4, 5, 5, 6 };
+            FindDuplicateValue(intArray);
+        }
+        //7---write a function to find the duplicate values inside an array of integer valuse
+        //return the resule in a new array.
+        //input:{1,3,1,4,5,5,6}
+        //output:{1,5}
+        public void FindDuplicateValue(int[] intArray)
+        {
+            ArrayList arrayList = new ArrayList();
+            int index = 0;
+            for (int i = 0; i < intArray.Length-1; i++)
             {
-                switch (option)
+                for (int j = i+1; j < intArray.Length; j++)
                 {
-                    case 1:
-                        Console.WriteLine("you chose complete number, enter a number:");
-                        int num = int.Parse(Console.ReadLine());
-                        Console.WriteLine(CompleteNmber(num));
-                        break;
-                    case 2:
-                        Console.WriteLine("you chose friends number, enter two numbers:");
-                        int n1 = int.Parse(Console.ReadLine());
-                        int n2 = int.Parse(Console.ReadLine());
-                        Console.WriteLine(AreFriend(n1, n2));
-                        break;
-                    default:
-                        Console.WriteLine("wrong oprion...");
-                        break;
+                    if (intArray[i] == intArray[j])
+                    {
+                        arrayList[index] = intArray[i];
+                        index++;
+                    }
                 }
-                Console.WriteLine("if you want to stop, you can enter number 0");
-                option = int.Parse(Console.ReadLine());
             }
+            foreach(var el in arrayList)
+                Console.WriteLine(el);
         }
 
         //6---write a function to print all friend number in range

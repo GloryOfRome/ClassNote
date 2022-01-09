@@ -47,11 +47,13 @@ namespace class20220107
         static bool CompleteNmber(int num)
         {
             int divisorSum = 0;
-            for (int i = 1; i < num; i++)
+            for (int i = 1; i <= num/2; i++)
             {
                 if (num % i == 0)
                     divisorSum += i;
             }
+            int someone = (int)num / 2;
+            Console.WriteLine($"num/2 = {someone}");
             Console.WriteLine($"the sum of its divisors is {divisorSum}");
             if (divisorSum == num)
                 return true;

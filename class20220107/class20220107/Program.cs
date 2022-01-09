@@ -31,12 +31,26 @@ namespace class20220107
             //int countNumber = CountNumberInArray(intArray, num);
             //Console.WriteLine(countNumber);
 
-            //3--
-            Console.WriteLine("please enter a number");
-            int num = int.Parse(Console.ReadLine());
+            ////3--
+            //Console.WriteLine("please enter a number");
+            //int num = int.Parse(Console.ReadLine());
 
-            bool completeNmber = CompleteNmber(num);
-            Console.WriteLine(completeNmber);
+            //bool completeNmber = CompleteNmber(num);
+            //Console.WriteLine(completeNmber);
+
+            CompleteNumbersInRang(1, 1000);
+        }
+        //4---write a function to print all complete number in range
+        static void CompleteNumbersInRang(int start,int end)
+        {
+            for (int i = start; i <= end; i++)
+            {
+                bool b = CompleteNmber(i);
+                if(b)
+                    Console.WriteLine(i);
+            }
+
+
         }
 
         //3---write a funtion to see if an umber is complete
@@ -52,9 +66,9 @@ namespace class20220107
                 if (num % i == 0)
                     divisorSum += i;
             }
-            int someone = (int)num / 2;
-            Console.WriteLine($"num/2 = {someone}");
-            Console.WriteLine($"the sum of its divisors is {divisorSum}");
+            //int someone = (int)num / 2;//测试
+            //Console.WriteLine($"num/2 = {someone}");
+            //Console.WriteLine($"the sum of its divisors is {divisorSum}");
             if (divisorSum == num)
                 return true;
             else

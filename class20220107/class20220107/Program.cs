@@ -41,19 +41,35 @@ namespace class20220107
             ////4--
             //CompleteNumbersInRang(1, 1000);
 
-            //5--
-            bool b = AreFriend(220, 284);
-            Console.WriteLine(b);
+            ////5--
+            //bool b = AreFriend(220, 284);
+            //Console.WriteLine(b);
+
+            //6--
+            PrintAllFriendsInRange(1, 10000);
+        }
+
+        //6---write a function to print all friend number in range
+        static void PrintAllFriendsInRange(int start,int end)
+        {
+            for (int i = start; i <= end; i++)
+            {
+                for (int j = start; j <= end; j++)
+                    if (AreFriend(i,j))
+                        Console.WriteLine($"{i}---{j}");
+            }
+            Console.WriteLine("that is all");
         }
         //5---the friend number
         //x,y
         //sum(divisors x)==y && sum(divisors y)==x,then x and y are friends
         static bool AreFriend(int num1,int num2)
         {
-            if (DivSum(num1) == num2 && DivSum(num2) == num1)
-                return true;
-            else
-                return false;
+            return (DivSum(num1) == num2 && DivSum(num2) == num1);//与下面相同的效果
+            //if (DivSum(num1) == num2 && DivSum(num2) == num1)
+            //    return true;
+            //else
+            //    return false;
         }
 
         //写一个方法求x除数的和

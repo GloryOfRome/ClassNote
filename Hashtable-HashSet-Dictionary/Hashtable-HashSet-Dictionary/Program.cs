@@ -12,6 +12,7 @@ namespace Hashtable_HashSet_Dictionary
         static void Main(string[] args)
         {
             #region 1.Hashtable
+            Console.WriteLine("---------Hashtable---------");
             Hashtable table = new Hashtable();
             //添加
             table.Add("小明", new Person() { Name = "小明" });
@@ -20,7 +21,7 @@ namespace Hashtable_HashSet_Dictionary
             table.Add("shabi", new Person() { Name = "傻逼" });
 
             //保存哈希表中元素的个数.
-            Console.WriteLine(table.Count);
+            //Console.WriteLine(table.Count);
 
             //遍历---键
             //showElKey(table);
@@ -31,14 +32,14 @@ namespace Hashtable_HashSet_Dictionary
             //直接遍历
             //showElTable(table);
 
-            //判断是否有指定的键
-            Console.WriteLine(findKey(table, "小明"));
-            Console.WriteLine(findKey(table, "小狗"));
-            Console.WriteLine("--------------------");
+            ////判断是否有指定的键
+            //Console.WriteLine(findKey(table, "小明"));
+            //Console.WriteLine(findKey(table, "小狗"));
+            //Console.WriteLine("--------------------");
 
-            //判断是否有指定的值
-            Console.WriteLine(findValue(table, "小明"));
-            Console.WriteLine(findValue(table, "小狗"));
+            ////判断是否有指定的值
+            //Console.WriteLine(findValue(table, "小明"));
+            //Console.WriteLine(findValue(table, "小狗"));
 
             //删除
             table.Remove("随意");
@@ -48,10 +49,37 @@ namespace Hashtable_HashSet_Dictionary
             //showElTable(table);
 
 
-            # endregion
+            #endregion
+
+            #region 2. HashSet
+            Console.WriteLine("---------HashSet---------");
+
+            HashSet<string> companyTeams = new HashSet<string>()
+            { "Ferrari", "McLaren", "Toyota", "BMW", "Renault", "Honda" };
+
+            HashSet<string> traditionalTeams = new HashSet<string>()
+            { "Ferrari", "McLaren" };
+
+            HashSet<string> privateTeams = new HashSet<string>()
+            { "Red Bull", "Toro Rosso", "Spyker", "Super Aguri" };
+
+            ////1---值不能重复
+            //DuplicateValue(privateTeams, companyTeams);
+
+            ////2---验证包含与被包含--IsSubsetOf()--IsSupersetOf()
+            //CheckEle(traditionalTeams, companyTeams);
+
+            //3---参数传送的集合中至少有一个元素与集中的元素相同，Overlaps()就返回true
+            //CheckOverlaps(traditionalTeams, privateTeams);
+
+            //4-1---UnionWith()方法把传送为参数的集合中的所有元素添加到集中
+            //4-2---ExceptWith()方法把一个集合作为参数，从集中删除该集合中的所有元素
+            CheckUnionWit(traditionalTeams, privateTeams, companyTeams);
+
+            #endregion
         }
 
-
+        #region 1.Hashtable method
         //--不明白---判断是否有指定的值
         static bool findValue(Hashtable table, string value)
         {
@@ -95,5 +123,72 @@ namespace Hashtable_HashSet_Dictionary
             foreach (Object obj in table.Keys)
                 Console.WriteLine($"{table[obj]} {obj}");
         }
+        #endregion
+
+        #region
+
+
+
+        //4-1---UnionWith()方法把传送为参数的集合中的所有元素添加到集中
+        static void CheckUnionWit(
+            HashSet<string> traditionalTeams, 
+            HashSet<string> privateTeams,
+            HashSet<string> companyTeams)
+        {
+            HashSet<string> allTeams = new HashSet<string>(companyTeams);
+            allTeams.UnionWith(privateTeams);
+            allTeams.UnionWith(traditionalTeams);
+            Console.WriteLine();
+            Console.WriteLine("all teams");
+            foreach (var team in allTeams)
+            {
+                Console.WriteLine(team);
+            }
+
+            Console.WriteLine("----------------------------");
+            //4-2---ExceptWith()方法把一个集合作为参数，从集中删除该集合中的所有元素
+            allTeams.ExceptWith(privateTeams);
+            Console.WriteLine();
+            Console.WriteLine("no private team left");
+            foreach (var team in allTeams)
+            {
+                Console.WriteLine(team);
+            }
+        }
+
+        //3---参数传送的集合中至少有一个元素与集中的元素相同，Overlaps()就返回true
+        static void CheckOverlaps(HashSet<string> traditionalTeams, HashSet<string> privateTeams)
+        {
+            traditionalTeams.Add("Williams");
+            privateTeams.Add("Williams");
+            if (privateTeams.Overlaps(traditionalTeams))
+            {
+                Console.WriteLine("At least one team is " + "the same with the traditional " + "and privateteams");
+            }
+        }
+
+
+        //2-验证超集和子集
+        static void CheckEle(HashSet<string> traditionalTeams, HashSet<string> companyTeams)
+        {
+            if (traditionalTeams.IsSubsetOf(companyTeams))
+            {
+                Console.WriteLine("traditionalTeams is " + "subset of companyTeams");
+            }
+
+            if (companyTeams.IsSupersetOf(traditionalTeams))
+            {
+                Console.WriteLine("companyTeams is a superset of " + "traditionalTeams");
+            }
+        }
+        //1---值不能重复
+        static void DuplicateValue(HashSet<string> privateTeams, HashSet<string> companyTeams)
+        {
+            if (privateTeams.Add("Williams"))
+                Console.WriteLine("Williams added");
+            if (!companyTeams.Add("McLaren"))
+                Console.WriteLine("McLaren was already in this set");
+        }
+        #endregion
     }
 }

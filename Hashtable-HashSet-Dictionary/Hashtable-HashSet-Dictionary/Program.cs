@@ -70,14 +70,14 @@ namespace Hashtable_HashSet_Dictionary
             //CheckEle(traditionalTeams, companyTeams);
 
             //3---参数传送的集合中至少有一个元素与集中的元素相同，Overlaps()就返回true
-            //CheckOverlaps(traditionalTeams, privateTeams);
+            CheckOverlaps(traditionalTeams, privateTeams);
 
             ////4-1---UnionWith()方法把传送为参数的集合中的所有元素添加到集中
             ////4-2---ExceptWith()方法把一个集合作为参数，从集中删除该集合中的所有元素
             //CheckUnionWit(traditionalTeams, privateTeams, companyTeams);
 
-            //5---参数传送的集合和集包含完全相同的元素，方法SetEquals()就返回true
-            CheckSetEquals(traditionalTeams);
+            ////5---参数传送的集合和集包含完全相同的元素，方法SetEquals()就返回true
+            //CheckSetEquals(traditionalTeams);
             #endregion
         }
 
@@ -169,7 +169,7 @@ namespace Hashtable_HashSet_Dictionary
         static void CheckOverlaps(HashSet<string> traditionalTeams, HashSet<string> privateTeams)
         {
             traditionalTeams.Add("Williams");
-            privateTeams.Add("Williams");
+            //privateTeams.Add("Williams");
             if (privateTeams.Overlaps(traditionalTeams))
             {
                 Console.WriteLine("At least one team is " + "the same with the traditional " + "and privateteams");
@@ -180,8 +180,10 @@ namespace Hashtable_HashSet_Dictionary
         //2-验证超集和子集
         static void CheckEle(HashSet<string> traditionalTeams, HashSet<string> companyTeams)
         {
+            //if (companyTeams.IsSubsetOf(traditionalTeams))
             if (traditionalTeams.IsSubsetOf(companyTeams))
             {
+                //Console.WriteLine("yes");
                 Console.WriteLine("traditionalTeams is " + "subset of companyTeams");
             }
 

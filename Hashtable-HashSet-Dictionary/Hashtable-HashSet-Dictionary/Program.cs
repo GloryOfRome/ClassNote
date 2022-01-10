@@ -19,6 +19,9 @@ namespace Hashtable_HashSet_Dictionary
             table.Add("随意", new Person() { Name = "小狗", Age = 28 });
             table.Add("shabi", new Person() { Name = "傻逼" });
 
+            //保存哈希表中元素的个数.
+            Console.WriteLine(table.Count);
+
             //遍历---键
             //showElKey(table);
 
@@ -32,7 +35,6 @@ namespace Hashtable_HashSet_Dictionary
             Console.WriteLine(findKey(table, "小明"));
             Console.WriteLine(findKey(table, "小狗"));
             Console.WriteLine("--------------------");
-
 
             //判断是否有指定的值
             Console.WriteLine(findValue(table, "小明"));

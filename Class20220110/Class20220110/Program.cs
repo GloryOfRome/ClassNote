@@ -10,16 +10,43 @@ namespace Class20220110
     {
         static void Main(string[] args)
         {
-            int[] intArray1 = new int[] { 1, 3, 1, 4, 5, 5, 6 };
-            FindTwoNumber(intArray1);
+            ////1--有一组重复数字的数组
+            //int[] intArray1 = new int[] { 1, 3, 1, 4, 5, 5, 6 };
+            //FindTwoNumber(intArray1);
 
-            Console.WriteLine("-------------------");
-            int[] intArray2 = new int[] { 1, 1, 3, 1, 4, 5, 5, 6 };
-            int[] temporaryNumArray = BubbleSort(intArray2);
-            everyEleArray(temporaryNumArray);
+            ////2--有多组重复数字的数组
+            //Console.WriteLine("-------------------");
+            //int[] intArray2 = new int[] { 1, 1, 3, 1, 4, 5, 5, 6 };
+            //int[] temporaryNumArray = BubbleSort(intArray2);
+            //everyEleArray(temporaryNumArray);
 
-            Console.WriteLine("-------------------");
-            FindOverTwoNumber(intArray2);
+            //Console.WriteLine("-------------------");
+            //FindOverTwoNumber(intArray2);
+
+            string[] stringArray = new string[] { "friend", "best", "bet" };
+
+            ////3-验证string[]中个别元素
+            //for (int i = 0; i < stringArray.Length; i++)
+            //{
+            //    for (int j = 0; j < stringArray[i].Length; j++)
+            //    {
+            //        Console.WriteLine(stringArray[i][j]);
+            //    }
+
+            //}
+
+            ////4-string[]中元素连到一起
+            //string aa = "";
+
+            //for (int i = 0; i < stringArray.Length; i++)
+            //{
+            //    aa = aa + stringArray[0];
+            //}
+            //Console.WriteLine(aa);
+
+
+
+
 
             ////有问题
             //Console.WriteLine("-------------------");
@@ -31,11 +58,13 @@ namespace Class20220110
             //        li.Add(temporaryNumArray[i]);
             //}
 
-            //Console.WriteLine("-------------------");
-            ////everyEleArray(li);
-            //foreach (var el in li)
-            //    Console.WriteLine(el);
+                //Console.WriteLine("-------------------");
+                ////everyEleArray(li);
+                //foreach (var el in li)
+                //    Console.WriteLine(el);
         }
+
+
         //遍历List
         static void everyEleArray(List<int> newList )
         {

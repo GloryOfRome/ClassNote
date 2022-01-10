@@ -23,17 +23,47 @@ namespace Hashtable_HashSet_Dictionary
             //showElKey(table);
 
             //遍历---值
-            showElValue(table);
+            //showElValue(table);
 
             //直接遍历
-            showElTable(table);
+            //showElTable(table);
+
+            //判断是否有指定的键
+            Console.WriteLine(findKey(table, "小明"));
+            Console.WriteLine(findKey(table, "小狗"));
+            Console.WriteLine("--------------------");
+
+
+            //判断是否有指定的值
+            Console.WriteLine(findValue(table, "小明"));
+            Console.WriteLine(findValue(table, "小狗"));
 
             //删除
             table.Remove("随意");
+            //table.Clear();
+
+            ////再次遍历
+            //showElTable(table);
 
 
             # endregion
         }
+
+
+        //--不明白---判断是否有指定的值
+        static bool findValue(Hashtable table, string value)
+        {
+            bool b = table.ContainsValue(value);
+            return b;
+        }
+
+        //判断是否有指定的键
+        static bool findKey(Hashtable table,string key)
+        {
+            bool b = table.ContainsKey(key);
+            return b;
+        }
+        
         //直接遍历
         static void showElTable(Hashtable table)
         {
@@ -46,11 +76,15 @@ namespace Hashtable_HashSet_Dictionary
             } 
         }
 
-        //---不明白---遍历---值
+        //遍历---值
         static void showElValue(Hashtable table)
         {
-            foreach(Object obj in table.Values)
-                Console.WriteLine(obj);
+            foreach (Object obj in table.Values)//因为值得内容元素不止一个，需要建立对象，再将每个对象的元素打印
+            {
+                Person ele = (Person)obj;
+                Console.WriteLine($"Name: {ele.Name},Age: {ele.Age}" );
+
+            }
         }
 
         //遍历---键

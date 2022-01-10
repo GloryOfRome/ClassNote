@@ -72,10 +72,12 @@ namespace Hashtable_HashSet_Dictionary
             //3---参数传送的集合中至少有一个元素与集中的元素相同，Overlaps()就返回true
             //CheckOverlaps(traditionalTeams, privateTeams);
 
-            //4-1---UnionWith()方法把传送为参数的集合中的所有元素添加到集中
-            //4-2---ExceptWith()方法把一个集合作为参数，从集中删除该集合中的所有元素
-            CheckUnionWit(traditionalTeams, privateTeams, companyTeams);
+            ////4-1---UnionWith()方法把传送为参数的集合中的所有元素添加到集中
+            ////4-2---ExceptWith()方法把一个集合作为参数，从集中删除该集合中的所有元素
+            //CheckUnionWit(traditionalTeams, privateTeams, companyTeams);
 
+            //5---参数传送的集合和集包含完全相同的元素，方法SetEquals()就返回true
+            CheckSetEquals(traditionalTeams);
             #endregion
         }
 
@@ -126,7 +128,14 @@ namespace Hashtable_HashSet_Dictionary
         #endregion
 
         #region
-
+        //5---参数传送的集合和集包含完全相同的元素，方法SetEquals()就返回true
+        static void CheckSetEquals(HashSet<string> traditionalTeams)
+        {
+            HashSet<string> temporaryHashSet = new HashSet<string>();
+            temporaryHashSet.UnionWith(traditionalTeams);
+            if(temporaryHashSet.SetEquals(traditionalTeams))
+                Console.WriteLine("the team is same");
+        }
 
 
         //4-1---UnionWith()方法把传送为参数的集合中的所有元素添加到集中

@@ -58,11 +58,24 @@ namespace Class20220111
             //Console.WriteLine(s4);
 
             //Contains包含
-            if(s.Contains("world"))
-                Console.WriteLine("good");
+            //if(s.Contains("ll"))
+            //    Console.WriteLine("good");
+            //else
+            //    Console.WriteLine("bad");
 
-
+            //练习
+            //1---intput:"Hello"---output"olleH"
+            findPartString("Hello");
             Console.ReadLine();
         }
+        static void findPartString(string str)
+        {
+            for(int i=str.Length-1; i >= 0; i--)
+            {
+                Console.Write(str[i]);
+            }
+        }
+            
+
     }
 }

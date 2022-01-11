@@ -40,6 +40,11 @@ namespace Class20220111
             Console.WriteLine(s);
             Console.WriteLine(ss);
 
+            //Trim修剪
+            string name = "          mike   ";
+            Console.WriteLine(name);
+            Console.WriteLine(name.Trim());
+
             Console.ReadLine();
         }
     }

@@ -48,12 +48,20 @@ namespace Class20220111
             //Console.WriteLine(name.TrimStart());
 
             //Substring取string的一部分，给出index位置
-            string s1 = s.Substring(5);
-            string s3 = s.Substring(4);
-            string s2 = s.Substring(6);
-            Console.WriteLine(s1);
-            Console.WriteLine(s2);
-            Console.WriteLine(s3);
+            //string s1 = s.Substring(5);
+            //string s3 = s.Substring(4);
+            //string s2 = s.Substring(6);
+            //string s4 = s.Substring(6,3);
+            //Console.WriteLine(s1);
+            //Console.WriteLine(s2);
+            //Console.WriteLine(s3);
+            //Console.WriteLine(s4);
+
+            //Contains包含
+            if(s.Contains("world"))
+                Console.WriteLine("good");
+
+
             Console.ReadLine();
         }
     }

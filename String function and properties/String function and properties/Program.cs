@@ -27,7 +27,8 @@ namespace String_function_and_properties
             ////Compare two string value and returns 0 for true and 1 for false
 
 
-            //Console.WriteLine($"检查字符串值中是否存在指定的字符或字符串。---{firstname.Contains("ven")}"); //Check whether specified value exists or not in string
+            Console.WriteLine($"检查字符串值中是否存在指定的字符或字符串。---{firstname.Contains("ven")}");
+            //Check whether specified value exists or not in string
 
             //Console.WriteLine($"检查指定的字符是否是字符串的最后一个字符。---{firstname.EndsWith("n")}"); //Check whether specified value is the last character of string
             //Console.WriteLine($"检查指定的字符是否是字符串的最后一个字符。---{firstname.EndsWith("k")}"); //Check whether specified value is the last character of string
@@ -36,7 +37,7 @@ namespace String_function_and_properties
             ////Compare two string and returns true and false
 
 
-            Console.WriteLine($"---不明白---返回指定字符串的 HashValue。---{firstname.GetHashCode()}");
+            //Console.WriteLine($"---不明白---返回指定字符串的 HashValue。---{firstname.GetHashCode()}");
             //Returns HashCode of String
 
             //Console.WriteLine($"返回当前实例的 System.Type。---{firstname.GetType()}");
@@ -58,7 +59,7 @@ namespace String_function_and_properties
             //Console.WriteLine($"在指定位置插入字符串或字符串中的字符---{firstname.Insert(0, "Hello ")}");
             ////Insert substring into string
 
-            Console.WriteLine($"---不明白---检查此字符串是否为 Unicode 规范化形式 C。---{firstname.IsNormalized()}");
+            //Console.WriteLine($"---不明白---检查此字符串是否为 Unicode 规范化形式 C。---{firstname.IsNormalized()}");
             //Check Whether string is in Unicode normalization from C
 
 
@@ -87,7 +88,7 @@ namespace String_function_and_properties
             //Console.WriteLine($"返回指定索引之间的字符串。---{firstname.Substring(2, 5)}");
             ////Returns substring
 
-            Console.WriteLine($"---不明白---将字符串转换为 char 数组。---{firstname.ToCharArray()}");
+            //Console.WriteLine($"---不明白---将字符串转换为 char 数组。---{firstname.ToCharArray()}");
             //Converts an string into char array.
 
             //Console.WriteLine($"它从字符串的开头和结尾删除额外的空格。---{firstname.Trim()}");

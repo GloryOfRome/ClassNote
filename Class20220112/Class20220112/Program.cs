@@ -45,7 +45,7 @@ namespace Class20220112
 
             //7-删除 bool 只删除第一个 remove、remeoveall,removeat
             //num.Remove(16);
-            ////num.RemoveAll(x=16);//错误
+            //num.RemoveAll(x => x == 16);
             //Console.WriteLine(num.Count);
             //num.RemoveAll(x => x % 2 == 1);
             //Console.WriteLine(num.Count);
@@ -63,10 +63,38 @@ namespace Class20220112
             //PrintList(num);
             //PrintList(words);
 
+            //9--list用foreach循环不能修改内部值
+            //Console.WriteLine("9---");
+            //int index = 0;
+            //foreach(int el in num)
+            //{
+            //    Console.WriteLine(el);
+            //    el = index;//红线
+
+            //}
+
             //练习-1
-            int[] arr1 = new int[] { 1, 5, 7, 3, 1, 7, 9 };
-            List<int> arrNum1 = new List<int>();
+            /*
+             * Cereat a new list from an original list with only the unique values
+             * input{ 1, 5, 7, 3, 1, 7, 9 };
+             * output{ 1, 5, 7, 3, 9 };
+             * **/
+            //int[] arr1 = new int[] { 1, 5, 7, 3, 1, 7, 9 };
+            List<int> arrNum1 = new List<int>() { 1, 5, 7, 3, 1, 7, 9 };
             //arrNum1.AddRange(arr1);
+
+            List<int> temp1 = NewList(arrNum1);
+            Console.WriteLine(temp1.Count);
+            Console.WriteLine("-------------------------");
+            foreach (int el in temp1)
+                Console.WriteLine(el);
+            Console.WriteLine("-------------------------");
+            for(int i=0;i< temp1.Count; i++)
+            {
+                Console.WriteLine(temp1[i]);
+            }
+
+
             //NewList(arrNum1);
 
             //练习-2
@@ -86,11 +114,11 @@ namespace Class20220112
 
 
             //练习-3
-            string[] arr3 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
-            List<string> arrNum3 = new List<string>();
-            arrNum3.AddRange(arr3);
-            foreach(string el in GetOldArr(arrNum3))
-                Console.WriteLine(el);
+            //string[] arr3 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
+            //List<string> arrNum3 = new List<string>();
+            //arrNum3.AddRange(arr3);
+            //foreach(string el in GetOldArr(arrNum3))
+            //    Console.WriteLine(el);
 
         }
         static List<string> GetOldArr(List<string> arrNum3)
@@ -103,18 +131,15 @@ namespace Class20220112
             return arrNum3;
         }
 
-        static void  NewList(List<int> arrNum)
+        static List<int>  NewList(List<int> arrNum1)
         {
-            for (int i = 0; i < arrNum.Count - 1; i++)
+            List<int> newInt = new List<int>();
+            foreach (int el in arrNum1)
             {
-                for (int j = i + 1; j < arrNum.Count; j++)
-                {
-                    if (arrNum[i] == arrNum[j])
-                        arrNum.RemoveAt(j);
-                }
+                if (!arrNum1.Contains(el))
+                    newInt.Add(el);
             }
-            foreach (int el in arrNum)
-                Console.WriteLine(el);
+            return newInt;
         }
 
         static void PrintList(List<int> list)

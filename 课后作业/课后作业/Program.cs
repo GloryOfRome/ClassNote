@@ -27,14 +27,6 @@ namespace 课后作业
             string str2 = "rca";
             string str3 = "java";
             string str4 = "javal";
-            //int a = Convert.ToInt32('a');
-            //Console.WriteLine(a);
-            //int num = 0;
-            //for (int i = 0; i < str1.Length; i++)
-            //{
-            //    num += Convert.ToInt32(str1[i]);
-            //}
-            //Console.WriteLine(num);
 
             FindSameChar(str1, str2);
             FindSameChar(str3, str4);
@@ -44,14 +36,14 @@ namespace 课后作业
         //0111检查两个字符串是否包含相同的字母但不同的顺序
         static void FindSameChar(string str1,string str2)
         {
-            if(changeToNum(str1)== changeToNum(str2))
+            if(ChangeToNum(str1)== ChangeToNum(str2))
                 Console.WriteLine($"{str1} {str2}: true");
             else
                 Console.WriteLine($"{str1} {str2}: false");
 
         }
 
-        static int changeToNum(string str)
+        static int ChangeToNum(string str)
         {
             int num = 0;
             for (int i = 0; i < str.Length; i++)

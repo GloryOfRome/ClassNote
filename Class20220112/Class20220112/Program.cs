@@ -117,25 +117,26 @@ namespace Class20220112
             //repeat the previous question同练习2，但是修改的是老list
             //but modify the same original list instead of creating a new one
 
-            string[] arr3 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
-            List<string> arrNum3 = new List<string>();
-            arrNum3.AddRange(arr3);
+            //string[] arr3 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
+            //List<string> arrNum3 = new List<string>();
+            //arrNum3.AddRange(arr3);
 
-            List<string> temp = FindUniqueNumbers(arrNum3);
-            foreach(string item in temp)
-                Console.WriteLine(item);
+            //List<string> temp = FindUniqueNumbers(arrNum3);
+            //foreach(string item in temp)
+            //    Console.WriteLine(item);
 
             //练习-4-下午
-            //List<int> n1 = new List<int> { 1, 2, 3 };
-            //List<int> n2 = new List<int> { 1, 2, 3 };
-            //List<int> n3 = new List<int> { 1, 2, 3 };
-            //List<List<int>> listOfLists = new List<List<int>>() { n1, n2, n3 };
+            //write a method to print a list of lists of integers
+            //编写一个方法来打印一个由整数组成的列表
+            //before each sub-list's contents, print its size
+            //在每个子列表的内容之前，打印其大小
 
-            //foreach(List<int> el in listOfLists)
-            //{
-            //    foreach(int item in el)
-            //        Console.WriteLine(item);
-            //}
+            List<int> n1 = new List<int> { 1, 2, 3 };
+            List<int> n2 = new List<int> { 4, 5,6,7 };
+            List<int> n3 = new List<int> { 8, 9 };
+            List<List<int>> listOfLists = new List<List<int>>() { n1, n2, n3 };
+            PrintListOfList(listOfLists);
+
 
             //练习-5
             List<int> list1 = new List<int> { 1, 5, 8, 9 };
@@ -153,6 +154,16 @@ namespace Class20220112
 
         }
 
+
+        static void PrintListOfList(List<List<int>> listOfLists)
+        {
+            foreach(List<int> el in listOfLists)
+            {
+                Console.WriteLine($"the length is {el.Count}");
+                foreach (int item in el)
+                    Console.WriteLine(item);
+            }
+        }
         //练习-3
         static List<string> FindUniqueNumbers(List<string> list)
         {

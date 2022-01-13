@@ -97,26 +97,33 @@ namespace Class20220112
             //    Console.WriteLine(item);
 
             //练习-2长度小于3的打印出来
+            //creat a new list from an original string list
+            //where you only keep the words less than 3 letters
             //input:{"Hello","World","I","am","Learning","C#"}
             //output:{"I","am","C#"}
 
-            string[] arr2 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
-            List<string> arrNum2 = new List<string>();
-            arrNum2.AddRange(arr2);
+            //string[] arr2 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
+            //List<string> arrNum2 = new List<string>();
+            //arrNum2.AddRange(arr2);
 
-            List<string> temp2 = GetOldArr(arrNum2);
-            foreach (string el in temp2)
-            {
-                Console.WriteLine(el);
-            }
+            //List<string> temp2 = GetOldArr(arrNum2);
+            //foreach (string el in temp2)
+            //{
+            //    Console.WriteLine(el);
+            //}
 
 
             //练习-3
-            //string[] arr3 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
-            //List<string> arrNum3 = new List<string>();
-            //arrNum3.AddRange(arr3);
-            //foreach(string el in GetOldArr(arrNum3))
-            //    Console.WriteLine(el);
+            //repeat the previous question同练习2，但是修改的是老list
+            //but modify the same original list instead of creating a new one
+
+            string[] arr3 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
+            List<string> arrNum3 = new List<string>();
+            arrNum3.AddRange(arr3);
+
+            List<string> temp = FindUniqueNumbers(arrNum3);
+            foreach(string item in temp)
+                Console.WriteLine(item);
 
             //练习-4-下午
             //List<int> n1 = new List<int> { 1, 2, 3 };
@@ -146,18 +153,18 @@ namespace Class20220112
 
         }
 
-
-        static List<int> FindUniqueNumbers(int[] numArr)
+        //练习-3
+        static List<string> FindUniqueNumbers(List<string> list)
         {
-            List<int> uniqueNumList = new List<int>();
-            for (int i = 0; i < numArr.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (!uniqueNumList.Contains(numArr[i]))
+                if (list[i].Length > 3)
                 {
-                    uniqueNumList.Add(numArr[i]);
+                    list.Remove(list[i]);
+                    i--;
                 }
             }
-            return uniqueNumList;
+            return list;
         }
 
         //练习-2

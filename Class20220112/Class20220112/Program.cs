@@ -96,7 +96,7 @@ namespace Class20220112
             //foreach (int item in temp)
             //    Console.WriteLine(item);
 
-            //练习-2
+            //练习-2长度小于3的打印出来
             //input:{"Hello","World","I","am","Learning","C#"}
             //output:{"I","am","C#"}
 
@@ -104,14 +104,11 @@ namespace Class20220112
             List<string> arrNum2 = new List<string>();
             arrNum2.AddRange(arr2);
 
-            GetOldArr(List<string> arrNum3)
-            //foreach(string el in arrNum2)
-            //{
-            //    if (el.Length < 3)
-            //    {
-
-            //    }
-            //}
+            List<string> temp2 = GetOldArr(arrNum2);
+            foreach (string el in temp2)
+            {
+                Console.WriteLine(el);
+            }
 
 
             //练习-3
@@ -169,7 +166,7 @@ namespace Class20220112
             List<string> shortWordList = new List<string>();
             foreach(string word in arrNum3)
             {
-                if (word.Length > 3)
+                if (word.Length < 3)
                     shortWordList.Add(word);
             }
             return shortWordList;

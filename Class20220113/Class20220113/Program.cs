@@ -23,7 +23,7 @@ namespace Class20220113
             //Console.WriteLine($"长度是：{hs.Count}");
 
             //hs.Remove(10);
-            Console.WriteLine(hs.Contains(10));//返回bool
+            //Console.WriteLine(hs.Contains(10));//返回bool
             //Console.WriteLine($"现在长度是：{hs.Count}");
 
             HashSet<string> stringSet = new HashSet<string>() { "Hello", "World", "World" };
@@ -35,44 +35,73 @@ namespace Class20220113
 
             //input{ 2,2,6}
             //output:false
-            //int[] intNum = new int[] { 1, 5, 8, 9, 0, 2 };
-            //HashSet<int> stringSet1 = new HashSet<int>() ;
-            //Array.Sort(intNum);
-            //foreach(int el in intNum)//验证排序成功
-            //    Console.WriteLine(el);
+
+            
+            List<int> list1 = new List<int>() { 2, 2, 6 };
+            list1.Sort();//方法一
+            //Array.Sort(intNum);//方法二
+            bool b1 = CheckForDuplication(list1);
+            //Console.WriteLine(b1);
+
 
             //练习-2
 
-            //List<int> list = new List<int>() { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
+            List<int> list2 = new List<int>() { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
             //HashSet<int> temp2 = GetOnlyOneNum(list);
             //foreach(int el in temp2)
             //    Console.WriteLine(el);
 
-            //查找最大元素O(n)
-            int[] intNum=new int[] { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
-            int temp = 0;
-            for (int i = 0; i < intNum.Length-1; i++)//O(n)
-            {
-                if (intNum[i] > intNum[i + 1])//O(1)
-                {
-                    temp = intNum[i];
-                }
-            }
-            Console.WriteLine(temp);
+            ////查找最大元素O(n)
+            //int[] intNum=new int[] { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
+            //int temp = 0;
+            //for (int i = 0; i < intNum.Length-1; i++)//O(n)
+            //{
+            //    if (intNum[i] > intNum[i + 1])//O(1)
+            //    {
+            //        temp = intNum[i];
+            //    }
+            //}
+            //Console.WriteLine(temp);
+
+            //练习-3
+            //List<int> list3 = new List<int>() { 1, 5, 7, 10, 1, 7, 1, 9 };
+            //list3.Sort();
+            ////HashSet<int> hs3 = new HashSet<int>(list3);
+            //int[] num3 = new int[10];
+            //for(int i = 0; i < list3.Count; i++)
+            //{
+            //    int temp = list3[i]-1;
+            //    num3[temp]++;
+            //}
+            //foreach(int el in num3)
+            //    Console.WriteLine(el);
+
+            string str = "aabcggjabbbc";
+            GetMostShow(str);
         }
 
-        //练习-1
-        //static bool Is(HashSet<int> stringSet1)
-        //{
+        static void GetMostShow(string str)
+        {
+            string[] temp = new string[26];
 
-        //}
+            //1-转ASK码
+            //int aa = Convert.ToInt32('a');
+            //int a = Convert.ToInt32('z');
+            //Console.WriteLine(aa);
+            //Console.WriteLine(a);
 
+            for (int i = 0; i < str.Length; i++)
+            {
+               
+            }
+
+        }
         //练习-2
         static HashSet<int> GetOnlyOneNum(List<int> list)
         {
             list.Sort();
             HashSet<int> hs = new HashSet<int>();
-            for(int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (!(list[i] == list[i + 1]))
                 {
@@ -80,6 +109,28 @@ namespace Class20220113
                 }
             }
             return hs;
+        }
+
+        //练习-1
+        static bool CheckForDuplication(List<int> list1)
+        {
+            //方法一
+            HashSet<int> hs1 = new HashSet<int>(list1);//将list1装入hs1
+            if (hs1.Count == list1.Count)
+                return true;
+            return false;
+
+
+            ////方法二--更好的方法
+            //HashSet<int> hs1 = new HashSet<int>();
+            ////foreach(int el in list1)
+            ////    Console.WriteLine(el);//验证排序成功
+            //for (int i = 0; i < list1.Count; i++)
+            //{
+            //    if (!hs1.Add(list1[i]))
+            //        return false;
+            //}
+            //    return true;
         }
     }
 }

@@ -79,31 +79,32 @@ namespace Class20220112
              * input{ 1, 5, 7, 3, 1, 7, 9 };
              * output{ 1, 5, 7, 3, 9 };
              * **/
+
+            //Console.WriteLine("我同学写的");
+            //int[] numbersArr = new int[] { 1, 5, 7, 3, 1, 7, 9 };
+            //List<int> uniqueNumbers = FindUniqueNumbers(numbersArr);
+            //foreach (int number in uniqueNumbers)
+            //{
+            //    Console.WriteLine("The unique number is:" + number);
+            //}
+
+            //Console.WriteLine("我写的");
             //int[] arr1 = new int[] { 1, 5, 7, 3, 1, 7, 9 };
-            List<int> arrNum1 = new List<int>() { 1, 5, 7, 3, 1, 7, 9 };
-            //arrNum1.AddRange(arr1);
-
-            List<int> temp1 = NewList(arrNum1);
-            Console.WriteLine(temp1.Count);
-            Console.WriteLine("-------------------------");
-            foreach (int el in temp1)
-                Console.WriteLine(el);
-            Console.WriteLine("-------------------------");
-            for(int i=0;i< temp1.Count; i++)
-            {
-                Console.WriteLine(temp1[i]);
-            }
-
-
-            //NewList(arrNum1);
+            //List<int> list = new List<int>();
+            //list.AddRange(arr1);
+            //List<int> temp = GetUniqueList(list);
+            //foreach (int item in temp)
+            //    Console.WriteLine(item);
 
             //练习-2
             //input:{"Hello","World","I","am","Learning","C#"}
             //output:{"I","am","C#"}
-            //string[] arr2 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
-            //List<string> arrNum2 = new List<string>();
-            //arrNum2.AddRange(arr2);
 
+            string[] arr2 = new string[] { "Hello", "World", "I", "am", "Learning", "C#" };
+            List<string> arrNum2 = new List<string>();
+            arrNum2.AddRange(arr2);
+
+            GetOldArr(List<string> arrNum3)
             //foreach(string el in arrNum2)
             //{
             //    if (el.Length < 3)
@@ -120,40 +121,88 @@ namespace Class20220112
             //foreach(string el in GetOldArr(arrNum3))
             //    Console.WriteLine(el);
 
+            //练习-4-下午
+            //List<int> n1 = new List<int> { 1, 2, 3 };
+            //List<int> n2 = new List<int> { 1, 2, 3 };
+            //List<int> n3 = new List<int> { 1, 2, 3 };
+            //List<List<int>> listOfLists = new List<List<int>>() { n1, n2, n3 };
+
+            //foreach(List<int> el in listOfLists)
+            //{
+            //    foreach(int item in el)
+            //        Console.WriteLine(item);
+            //}
+
+            //练习-5
+            List<int> list1 = new List<int> { 1, 5, 8, 9 };
+            List<int> list2 = new List<int> { 1, 2, 3, 10 };
+            List<List<int>> newListOfLists = new List<List<int>>() { list1, list2 };
+            //int[] number = new int[list1.Count+list2.Count];
+            //for(int i=0;i< newListOfLists.Count-1; i++)
+            //{
+            //    int temp = 0;
+            //    for (int i = i+1; i < newListOfLists.Count; i++)
+            //        if(newListOfLists)
+            //}
+
+
+
         }
+
+
+        static List<int> FindUniqueNumbers(int[] numArr)
+        {
+            List<int> uniqueNumList = new List<int>();
+            for (int i = 0; i < numArr.Length; i++)
+            {
+                if (!uniqueNumList.Contains(numArr[i]))
+                {
+                    uniqueNumList.Add(numArr[i]);
+                }
+            }
+            return uniqueNumList;
+        }
+
+        //练习-2
         static List<string> GetOldArr(List<string> arrNum3)
         {
-            foreach (string el in arrNum3)
+            List<string> shortWordList = new List<string>();
+            foreach(string word in arrNum3)
             {
-                if (el.Length > 3)
-                    arrNum3.Remove(el);
+                if (word.Length > 3)
+                    shortWordList.Add(word);
             }
-            return arrNum3;
+            return shortWordList;
         }
 
-        static List<int>  NewList(List<int> arrNum1)
+        //练习-1
+        static List<int>  GetUniqueList(List<int> list)
         {
-            List<int> newInt = new List<int>();
-            foreach (int el in arrNum1)
+            List<int> result = new List<int>();
+            foreach (int item in list)
             {
-                if (!arrNum1.Contains(el))
-                    newInt.Add(el);
+                if (!result.Contains(item))
+                    result.Add(item);
             }
-            return newInt;
+            return result;
         }
 
+
+        //polymorphism多态-int
         static void PrintList(List<int> list)
         {
             foreach(int el in list)
                 Console.WriteLine(el);
         }
 
+        //polymorphism多态-string
         static void PrintList(List<string> list)
         {
             foreach (string el in list)
                 Console.WriteLine(el);
         }
 
+        //polymorphism多态-char
         static void PrintList(List<char> list)
         {
             foreach (char el in list)

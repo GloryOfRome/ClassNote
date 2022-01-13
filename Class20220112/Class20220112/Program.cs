@@ -131,29 +131,71 @@ namespace Class20220112
             //before each sub-list's contents, print its size
             //在每个子列表的内容之前，打印其大小
 
-            List<int> n1 = new List<int> { 1, 2, 3 };
-            List<int> n2 = new List<int> { 4, 5,6,7 };
-            List<int> n3 = new List<int> { 8, 9 };
-            List<List<int>> listOfLists = new List<List<int>>() { n1, n2, n3 };
-            PrintListOfList(listOfLists);
+            //List<int> n1 = new List<int> { 1, 2, 3 };
+            //List<int> n2 = new List<int> { 4, 5,6,7 };
+            //List<int> n3 = new List<int> { 8, 9 };
+            //List<List<int>> listOfLists = new List<List<int>>() { n1, n2, n3 };
+            //PrintListOfList(listOfLists);
 
 
             //练习-5
+            //we have two sorted int lists
+            //and we want to merge them in a new sorted list
+            //input list1 = { 1, 5, 8, 9 }  list2 = { 1, 2, 3, 10 }
+            //output result = { 1,1,2,3, 5, 8, 9 ,10}
+
+            /*
+             *-repeat the question with arrays用数组重复问题
+             *-iterate over both lists (while both lists still have items)
+             * 遍历两个列表（虽然两个列表仍然有项目）
+             *  -compare an item from list and list2
+             *  比较 list 和 list2 中的项目
+             *  -place the smaller item in the result
+             *  将较小的项目放在结果中
+             *  -increase the counter of the smaller item's array
+             *  增加较小项目数组的计数器
+             *  -if the two numbers are equal, place both, and increase both counts
+             *  如果两个数字相等，放置两个，并增加两个计数
+             *  
+             * -check to see if there are any remaining items in either lists
+             * 检查任一列表中是否还有剩余项目
+             * -place any remainng items in the result
+             * 在结果中放置任何剩余的项目
+             * **/
+
             List<int> list1 = new List<int> { 1, 5, 8, 9 };
             List<int> list2 = new List<int> { 1, 2, 3, 10 };
             List<List<int>> newListOfLists = new List<List<int>>() { list1, list2 };
-            //int[] number = new int[list1.Count+list2.Count];
-            //for(int i=0;i< newListOfLists.Count-1; i++)
-            //{
-            //    int temp = 0;
-            //    for (int i = i+1; i < newListOfLists.Count; i++)
-            //        if(newListOfLists)
-            //}
+            while ()
+            {
+
+            }
+            for(int i = 0; i < list1.Count-1; i++)
+            {
+                for (int j = i+1; j < list2.Count; j++)
+                {
+                    if(list1[i]<list2[j])
+                }
+            }
 
 
 
         }
+        //练习-5
+        static List<int> GetOneList(List<int> list1,List<int> list2)
+        {
+            List<int> resule = new List<int>();
+            int i = 0;
+            int j = 0;
 
+            while (i < list1.Count && j < list2.Count)
+            {
+                if (list1[i] < list2[j])
+                {
+                    resule.Add(list1[i]);
+                }
+            }
+        }
 
         static void PrintListOfList(List<List<int>> listOfLists)
         {

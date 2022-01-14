@@ -30,31 +30,46 @@ namespace Class20220113
             //Console.WriteLine(stringSet.Count);//相同的不显示，自动屏蔽
 
             //练习-1
-            //input{ 1,5,8,9,0,2}
-            //output:true
+            /*
+             * check if a list has all unique elements using a HashSet
+             * example:
+             * input:{1,5,8,9,0,2}
+             * output:true
+             * 
+             * input:{2,2,6}
+             * output:false
+             * 
+             * what if the list is very big and we want to exit with a result as soon as possible?
+             * 如果列表很大并且我们想尽快退出并得到结果怎么办？
+             * **/
 
-            //input{ 2,2,6}
-            //output:false
-
-            
             Console.WriteLine("EX1");
             List<int> list1 = new List<int>() { 1, 5, 8, 9, 0, 2 };
-            List<int> list2 = new List<int>() { 2, 2, 6 };
+            //List<int> list1 = new List<int>() { 2, 2, 6 };
             list1.Sort();//方法一
             //Array.Sort(intNum);//方法二
             bool b1 = CheckForDuplication(list1);
-            bool b2 = CheckForDuplication(list2);
             Console.WriteLine(b1);
-            Console.WriteLine(b2);
-
-
+            Console.WriteLine("-------------------");
 
             //练习-2
+            /*find the elements that appeared only once in a list on integers
+             * 找出在整数列表中只出现一次的元素
+             * exapmle
+             * input:{ 4, 3, 2, 4, 5, 6, 2, 4, 4 }
+             * output:{3,5,6}
+             * **/
 
-            //List<int> list2 = new List<int>() { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
-            //HashSet<int> temp2 = GetOnlyOneNum(list);
-            //foreach(int el in temp2)
+            Console.WriteLine("EX2");
+            List<int> list2 = new List<int>() { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
+            //list2.Sort();//验证排序，此处无用
+            //foreach (int el in list2)
             //    Console.WriteLine(el);
+            
+            foreach (int el in GetOnlyOneNum(list2))
+            Console.WriteLine(el);
+            Console.WriteLine("-------------------");
+
 
             ////查找最大元素O(n)
             //int[] intNum=new int[] { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
@@ -102,33 +117,26 @@ namespace Class20220113
 
         }
         //练习-2
-        static HashSet<int> GetOnlyOneNum(List<int> list)
+        static List<int> GetOnlyOneNum(List<int> list2)
         {
-            list.Sort();
-            HashSet<int> hs = new HashSet<int>();
-            for (int i = 0; i < list.Count; i++)
+            HashSet<int> hs2 = new HashSet<int>();
+            List<int> temp = new List<int>();
+            for (int i = 0; i < list2.Count; i++)
             {
-                if (!(list[i] == list[i + 1]))
+                if (hs2.Add(list2[i]))
                 {
-                    hs.Add(list[i]);
+                    temp.Add(list2[i]);
+                }
+                else
+                {
+                    temp.Remove(list2[i]);
                 }
             }
-            return hs;
+            return temp;
         }
 
         //练习-1
-        /*
-         * check if a list has all unique elements using a HashSet
-         * example:
-         * input:{1,5,8,9,0,2}
-         * output:true
-         * 
-         * input:{2,2,6}
-         * output:false
-         * 
-         * what if the list is very big and we want to exit with a result as soon as possible?
-         * 如果列表很大并且我们想尽快退出并得到结果怎么办？
-         * **/
+        
         static bool CheckForDuplication(List<int> list1)
         {
             //方法一

@@ -84,6 +84,8 @@ namespace Class20220113
             Console.WriteLine("EX3");
             List<int> list3 = new List<int>() { 1, 5, 7, 10, 1, 7, 1, 9 };
             MostFrequentNumber(list3);
+            Console.WriteLine("-------------------");
+
 
             //list3.Sort();
             ////HashSet<int> hs3 = new HashSet<int>(list3);
@@ -96,24 +98,52 @@ namespace Class20220113
             //foreach(int el in num3)
             //    Console.WriteLine(el);
 
+            //练习-4
+            /*in a string of lowercase English letters only find the letter with the top frequency
+             * 在一串小写英文字母中只找到出现频率最高的字母
+             * input:"aabcggjabbbc"
+             * output:b
+             * **/
+            Console.WriteLine("EX3");
             string str = "aabcggjabbbc";
             GetMostShow(str);
         }
-
+        //练习-4
         static void GetMostShow(string str)
         {
-            string[] temp = new string[26];
+            int[] temp = new int[27];
+            str.ToCharArray();
+            //foreach (char el in str)//验证转换成char[]
+            //    Console.WriteLine(el);
+            HashSet<char> hs4 = new HashSet<char>();
+            for (int i = 0; i < str.Length; i++)
+            {
+                int tempInt = Convert.ToInt32(str[i]);
+                //Console.WriteLine($"{str[i]}字母转成数字{tempInt}");
+                temp[tempInt - 97] += 1;
+                //Console.WriteLine($"新集合中，索引{tempInt - 97}对应的值{temp[tempInt - 97]}");
+                //Console.WriteLine();
+            }
 
-            //1-转ASK码
+            int max = int.MinValue;
+            int changeNum = -1;
+            for (int i = 0; i < temp.Length; i++)//得到集合中最大值所对应的索引
+            {
+                if (temp[i] > max)
+                {
+                    max = temp[i];
+                    changeNum = i;
+                }
+            }
+            char tempChar = Convert.ToChar(changeNum+97);
+            Console.WriteLine(tempChar);
+
+            //    //1-转ASK码
             //int aa = Convert.ToInt32('a');
             //int a = Convert.ToInt32('z');
             //Console.WriteLine(aa);
             //Console.WriteLine(a);
 
-            for (int i = 0; i < str.Length; i++)
-            {
-               
-            }
 
         }
 

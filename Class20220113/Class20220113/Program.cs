@@ -37,16 +37,21 @@ namespace Class20220113
             //output:false
 
             
-            List<int> list1 = new List<int>() { 2, 2, 6 };
+            Console.WriteLine("EX1");
+            List<int> list1 = new List<int>() { 1, 5, 8, 9, 0, 2 };
+            List<int> list2 = new List<int>() { 2, 2, 6 };
             list1.Sort();//方法一
             //Array.Sort(intNum);//方法二
             bool b1 = CheckForDuplication(list1);
-            //Console.WriteLine(b1);
+            bool b2 = CheckForDuplication(list2);
+            Console.WriteLine(b1);
+            Console.WriteLine(b2);
+
 
 
             //练习-2
 
-            List<int> list2 = new List<int>() { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
+            //List<int> list2 = new List<int>() { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
             //HashSet<int> temp2 = GetOnlyOneNum(list);
             //foreach(int el in temp2)
             //    Console.WriteLine(el);
@@ -112,6 +117,18 @@ namespace Class20220113
         }
 
         //练习-1
+        /*
+         * check if a list has all unique elements using a HashSet
+         * example:
+         * input:{1,5,8,9,0,2}
+         * output:true
+         * 
+         * input:{2,2,6}
+         * output:false
+         * 
+         * what if the list is very big and we want to exit with a result as soon as possible?
+         * 如果列表很大并且我们想尽快退出并得到结果怎么办？
+         * **/
         static bool CheckForDuplication(List<int> list1)
         {
             //方法一

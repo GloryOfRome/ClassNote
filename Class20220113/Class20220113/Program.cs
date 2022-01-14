@@ -70,21 +70,21 @@ namespace Class20220113
             Console.WriteLine(el);
             Console.WriteLine("-------------------");
 
-
-            ////查找最大元素O(n)
-            //int[] intNum=new int[] { 4, 3, 2, 4, 5, 6, 2, 4, 4 };
-            //int temp = 0;
-            //for (int i = 0; i < intNum.Length-1; i++)//O(n)
-            //{
-            //    if (intNum[i] > intNum[i + 1])//O(1)
-            //    {
-            //        temp = intNum[i];
-            //    }
-            //}
-            //Console.WriteLine(temp);
-
             //练习-3
-            //List<int> list3 = new List<int>() { 1, 5, 7, 10, 1, 7, 1, 9 };
+            /*In a list of numbers (those number are between 1 and 10 only)
+             * 在数字列表中（这些数字仅在 1 到 10 之间）
+             * find the most frequent number in O(n) time.
+             * 在 O(n) 时间内找到最频繁的数字。
+             * 
+             * example:
+             * input:{ 1, 5, 7, 10, 1, 7, 1, 9 }
+             * output:1
+             * **/
+
+            Console.WriteLine("EX3");
+            List<int> list3 = new List<int>() { 1, 5, 7, 10, 1, 7, 1, 9 };
+            MostFrequentNumber(list3);
+
             //list3.Sort();
             ////HashSet<int> hs3 = new HashSet<int>(list3);
             //int[] num3 = new int[10];
@@ -115,6 +115,32 @@ namespace Class20220113
                
             }
 
+        }
+
+
+        //练习-3
+        static void MostFrequentNumber(List<int> list3)
+        {
+            int[] arr = new int[11];
+            for (int i = 0; i < list3.Count; i++)
+            {
+                arr[list3[i]] += 1;
+            }
+
+            //foreach (int el in arr)//验证数据已经导入
+            //    Console.WriteLine($"索引对应的值{el}");
+
+            int max = int.MinValue;
+            int temp = -1;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                    temp = i;
+                }
+            }
+            Console.WriteLine(temp);
         }
         //练习-2
         static List<int> GetOnlyOneNum(List<int> list2)

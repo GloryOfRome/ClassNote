@@ -43,6 +43,7 @@ namespace Class20220116
             stack.Push("b");
             stack.Push("c");
             stack.Push("d");
+            //Stack<string> newstacl = stack<string>.ToArray();
             Console.WriteLine("当前stack元素为");
             foreach(string el in stack)
                 Console.Write($"{el}, ");
@@ -75,9 +76,13 @@ namespace Class20220116
                 Console.Write($"{el}, ");
             Console.WriteLine();
             Console.WriteLine("--------------------");
-            
+            queues.Dequeue();
+            Console.WriteLine("遍历queues,其元素为");
+            foreach (int el in queues)
+                Console.Write($"{el}, ");
 
-            
+
+
 
 
             Console.ReadLine();

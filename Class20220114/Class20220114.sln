@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1758
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Class20220114", "Class20220114\Class20220114.csproj", "{3988C997-B03B-44FD-A46A-0E5A6202CF8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "错误", "..\..\错误\错误\错误.csproj", "{7760D284-2437-4DDB-981F-86AE59A7E3C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,11 +17,15 @@ Global
 		{3988C997-B03B-44FD-A46A-0E5A6202CF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3988C997-B03B-44FD-A46A-0E5A6202CF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3988C997-B03B-44FD-A46A-0E5A6202CF8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7760D284-2437-4DDB-981F-86AE59A7E3C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7760D284-2437-4DDB-981F-86AE59A7E3C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7760D284-2437-4DDB-981F-86AE59A7E3C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7760D284-2437-4DDB-981F-86AE59A7E3C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1863A21F-0316-436A-902B-6A186FFB9F86}
+		SolutionGuid = {6366339B-0CD5-4245-892A-E46AE3EFA16F}
 	EndGlobalSection
 EndGlobal

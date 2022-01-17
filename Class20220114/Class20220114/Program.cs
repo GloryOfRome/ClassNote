@@ -114,30 +114,73 @@ namespace Class20220114
             //4-6 Display all products ordered by price (using built-in C# methods and other types is allowed)
             //显示按价格排序的所有产品(允许使用内置的c#方法和其他类型)
             OrderedByPrice(dic4);
+            Console.WriteLine("--------------------");
 
+            //4-7 A function to create another dictionary for all products sharing the same price,
+            //为共享相同价格的所有产品创建另一个字典的功能，
+            //where the key is the price and the value is a list of products names with that price
+            //其中键是价格，值是具有该价格的产品名称列表
+            CreateAnotherDictionary(dic4);
+            List<string> aa = new List<string>();
+            aa ={ "aasdas","dfdsfsd","hgfd"};
+            Dictionary<int, List<string>> bb = new Dictionary<int, List<string>>();
+            bb.Add(1, aa);
+            foreach (KeyValuePair<int, List<string>> el in bb)
+            {
+                Console.WriteLine( $"{el.Value}--{el.Key}");
+            }
         }
+
+
+        //4-7 A function to create another dictionary for all products sharing the same price,
+        //为共享相同价格的所有产品创建另一个字典的功能，
+        //where the key is the price and the value is a list of products names with that price
+        //其中键是价格，值是具有该价格的产品名称列表
+        static void CreateAnotherDictionary(Dictionary<string, int> dic4)
+        {
+            Dictionary<int, List<string>> newDictionary = new Dictionary<int, List<string>>();
+            List<string> productsList = new List<string>();
+            for (int i = 0; i < dic4.Count; i++)
+            {
+
+            }
+                foreach (KeyValuePair<string,int> el in dic4)
+            {
+                //if(el.Value==el.Value)
+            }
+        }
+
+
         //4-6 Display all products ordered by price (using built-in C# methods and other types is allowed)
         //显示按价格排序的所有产品(允许使用内置的c#方法和其他类型)
 
         static void OrderedByPrice(Dictionary<string, int> dic4)
         {
             int[] intArray = new int[dic4.Count];
-            HashSet<int> tempInt = new HashSet<int>();
-            List<List<string>> tempString = new List<List<string>>();
+            List<int> list = new List<int>();
+            //HashSet<int> tempInt = new HashSet<int>();
+            //List<List<string>> tempString = new List<List<string>>();
             int index = 0;
-            int num1 = 0;
-            int min = int.MinValue;
+            //int num1 = 0;
 
-            foreach (KeyValuePair<string, int> el in dic4)//将价格放入hashset去掉重复值
+            foreach (KeyValuePair<string, int> el in dic4)//将价格放入array
             {
-                if(intArray.Contains(el.Value))
+                intArray[index] = el.Value;
+                index++;
+            }
+            Array.Sort(intArray);//排序
+
+            int min = int.MinValue;
+            for (int i = 1; i < intArray.Length; i++)
+            {
+                min = intArray[0];
+                if (intArray[i] == min)
                 {
-                    intArray[index] = el.Value;
-                    Console.WriteLine(intArray[index]);
-                    index++;
+                    
                 }
             }
-            foreach(int el in intArray)
+
+                foreach (int el in intArray)
                 Console.WriteLine(el);
 
         }
@@ -159,23 +202,6 @@ namespace Class20220114
         }
 
 
-        //4-7 A function to create another dictionary for all products sharing the same price,
-        //为共享相同价格的所有产品创建另一个字典的功能，
-        //where the key is the price and the value is a list of products names with that price
-        //其中键是价格，值是具有该价格的产品名称列表
-        static void CreateAnotherDictionary(Dictionary<string, int> dic4)
-        {
-            Dictionary<int, List<string>> newDictionary = new Dictionary<int, List<string>>();
-            List<string> productsList = new List<string>();
-            for (int i = 0; i < dic4.Count; i++)
-            {
-
-            }
-                foreach (KeyValuePair<string,int> el in dic4)
-            {
-                //if(el.Value==el.Value)
-            }
-        }
 
         //4-4 Show all products with prices more than a certain price 显示价格超过某个价格的所有产品
         static void MoreThanCertainPrice(Dictionary<string, int> dic4,int price)

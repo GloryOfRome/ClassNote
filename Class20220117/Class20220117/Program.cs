@@ -48,11 +48,74 @@ namespace Class20220117
                 Get the average rating for each movie 
                 获得每部电影的平均评分
              * **/
-            HashSet<int> get1 = UserRatedTen(intArray);
-            foreach(int el in get1)
-                Console.WriteLine($"the uers think the number{el} movies can reting 10");
+            //HashSet<int> get1 = UserRatedTen(intArray);
+            //foreach(int el in get1)
+            //    Console.WriteLine($"the uers think the number{el} movies can reting 10");
+
+            //for (int i = 0; i < intArray.GetLength(1); i++)
+            //{
+            //    for (int j = 0; j < intArray.GetLength(0); j++)
+            //    {
+            //        Console.WriteLine($"第{j}列，第{i}行的数字是{intArray[j, i]}");
+            //    }
+            //}
+            int[,] arr = new int[, ]
+            {
+                {1,1,1,1,1,1,1 },
+                {1,1,1,1,1,0,1 },
+                {0,1,1,1,1,1,1 }
+            };
+            RowAndColumnBecomeZero(arr);
 
         }
+
+        static void RowAndColumnBecomeZero(int[,] arr)
+        {
+            Dictionary<int, int> result = new Dictionary<int, int>();
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i, j] == 0)
+                    {
+                        result.Add(i, j);
+                    }
+                }
+            }
+            foreach(KeyValuePair<int,int> el in result)
+            {
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    arr[el.Key, i] = 0;
+                }
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr[j, el.Value] = 0;
+                }
+            }
+            foreach(int el in arr)
+            {
+                Console.WriteLine($"{el} ");
+            }
+
+        }
+
+        //Get the average rating for each movie
+        //获得每部电影的平均评分
+        static void GetAverageRating(int[,] intArray)
+        {
+            int[] intArr = new int[intArray.GetLength(0)];
+
+            for (int i = 0; i < intArray.GetLength(1); i++)
+            {
+                int index = 0;
+                for (int j = 0; j < intArray.GetLength(0); j++)
+                {
+                    
+                }
+            }
+        }
+
 
         //Get all movies rated 10 by 1 user at Least 
         //获得所有电影评级为10个用户至少
